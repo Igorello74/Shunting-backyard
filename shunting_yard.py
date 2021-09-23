@@ -3,7 +3,7 @@ from enum import Enum
 class Token:
     NUM = 0
     OPERATOR = 1
-    CONSTANT = 2
+    VARIABLE = 2
 
     def __init__(self, val, token_type):
         self.val = val
@@ -27,6 +27,9 @@ def shunting_yard(inp):
                 
             if i in operators:
                 tokens.append(Token(i, Token.OPERATOR))
+            
+            elif i.isalpha():
+                tokens.append(Token(i, Token.VARIABLE))
             
     if prev:
         tokens.append(Token(prev, Token.NUM))
