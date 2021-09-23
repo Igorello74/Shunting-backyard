@@ -9,7 +9,7 @@ class Token:
         self.val = val
         self.token_type = token_type
     
-operators = "+-*/^"
+OPERATORS = "^*/+-"
 
 def shunting_yard(inp):
     inp = inp.replace(' ', '')
@@ -25,7 +25,7 @@ def shunting_yard(inp):
                 tokens.append(Token(prev, Token.NUM))
                 prev = ''
                 
-            if i in operators:
+            if i in OPERATORS:
                 tokens.append(Token(i, Token.OPERATOR))
             
             elif i.isalpha():
@@ -36,15 +36,18 @@ def shunting_yard(inp):
     del prev
 
     output = []
-    op_stack = []
+    operators_stack = []
+
     for i in tokens:
-        if i.token_types == Token.NUM:
+        if i.token_type == Token.NUM:
             output.append(i.val)
-        elif i.token_types == Token.OPERATOR:
+        elif i.token_type == Token.OPERATOR:
             op_stack.append
     return tokens
 
 
 if __name__ == '__main__':
     a = input()
-    print(shunting_yard(a))
+    b = shunting_yard(a)
+    for i in b:
+        print(f"{i.token_type}:\t{i.val}")
