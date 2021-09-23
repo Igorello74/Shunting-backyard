@@ -6,8 +6,8 @@ class Token:
     CONSTANT = 2
 
     def __init__(self, val, token_type):
-        val = val
-        token_type = token_type
+        self.val = val
+        self.token_type = token_type
     
 operators = "+-*/^"
 
