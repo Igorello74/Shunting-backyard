@@ -19,7 +19,7 @@ class Token:
         self.token_type = token_type
     
 
-def shunting_yard(inp):
+def infix2postfix(inp):
     inp = inp.replace(' ', '') # delete any spaces
 
     tokens = []
@@ -77,4 +77,4 @@ def shunting_yard(inp):
 
 if __name__ == '__main__':
     a = input()
-    print(shunting_yard(a))
+    print(infix2postfix(a))
