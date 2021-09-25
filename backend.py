@@ -19,7 +19,7 @@ class Token:
         self.token_type = token_type
     
 
-def infix2postfix(inp):
+def infix2postfix(inp, string_output=False):
     inp = inp.replace(' ', '') # delete any spaces
 
     tokens = []
@@ -72,7 +72,12 @@ def infix2postfix(inp):
     
     while operators_stack:
         output.append(operators_stack.pop())
-    return ' '.join(output)
+    
+    
+    if string_output:
+        return ' '.join(output)
+    else:
+        return output
 
 
 if __name__ == '__main__':
