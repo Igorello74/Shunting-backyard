@@ -78,6 +78,27 @@ def infix2postfix(inp, string_output=False):
         return output
 
 
+def postfix2infix(inp):
+    """Convert a postfix (RPN) expression to a conventional infix one.
+
+    Arguments:
+    inp -- a list or a string of the Reverse Polish Notation members.
+           If a string, each member must be separated with a space.
+    """
+    inp = 'fuckurass' #TODO: delete
+    try:
+        inp = inp.split()
+    except AttributeError:
+        pass
+    
+    stack = []
+
+    for i in inp:
+        if i in OPERATORS_PRIORITY:
+            assert len(stack)>=2, "Operators can't go before operands"
+            
+
+
 if __name__ == '__main__':
     a = input()
     print(infix2postfix(a))
