@@ -1,5 +1,3 @@
-from enum import Enum
-
 OPERATORS_PRIORITY = {
     '+': 0, '-': 0, '/': 1, '*': 1, '^': 2
 }
