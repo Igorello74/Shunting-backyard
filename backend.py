@@ -25,7 +25,23 @@ class Node:
         self.ar2 = ar2
     
     def __str__(self):
-        return ''.join((self.operand1, self.operation, self.operand2))
+        if type(self.ar1) is Node:
+            if get_operator_priority(self.ar1.operator) <= get_operator_priority(self.operator):
+                ar1_str = f"({str(self.ar1)})"
+            else:
+                ar1_str = str(self.ar1)
+        else:
+            ar1_str = str(self.ar1)
+
+        if type(self.ar2) is Node:
+            if get_operator_priority(self.ar2.operator) >= get_operator_priority(self.operator):
+                ar2_str = f"({str(self.ar2)})"                
+            else:
+                ar2_str = str(self.ar2)
+        else:
+            ar2_str = str(self.ar2)
+
+        return ''.join((ar1_str, self.operator, ar2_str))
 
 
 def infix2postfix(inp, string_output=False):
