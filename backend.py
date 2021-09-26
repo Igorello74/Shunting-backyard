@@ -41,7 +41,7 @@ class Node:
         else:
             ar2_str = str(self.ar2)
 
-        return ''.join((ar1_str, self.operator, ar2_str))
+        return ' '.join((ar1_str, self.operator, ar2_str))
 
 
 def infix2postfix(inp, string_output=False):
