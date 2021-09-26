@@ -51,13 +51,13 @@ input_entry.focus()
 
 lbl4 = ttk.Label(window, text="OUTPUT:")
 lbl4.grid(column=0, row=4)
-output = ttk.Label(window, text='n/a')
-output.grid(column=0, row=5)
+output_label = ttk.Label(window, text='n/a')
+output_label.grid(column=0, row=5)
 
 def clicked():
     inp = input_entry.get()
     outp = be.infix2postfix(inp)
-    output.configure(text=outp)
+    output_label.configure(text=outp)
 
 run_btn = ttk.Button(window, text="RUN", command=clicked)
 run_btn.grid(column=0, row=6)
