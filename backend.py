@@ -34,7 +34,7 @@ class Node:
             ar1_str = str(self.ar1)
 
         if type(self.ar2) is Node:
-            if get_operator_priority(self.ar2.operator) >= get_operator_priority(self.operator):
+            if get_operator_priority(self.ar2.operator) <= get_operator_priority(self.operator):
                 ar2_str = f"({str(self.ar2)})"                
             else:
                 ar2_str = str(self.ar2)
