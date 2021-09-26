@@ -126,8 +126,11 @@ def postfix2infix(inp):
             node = Node(stack.pop(-2), i, stack.pop())
             stack.append(node)
         
-        else:
+        elif i.isalnum():
             stack.append(i)
+        
+        else:
+            raise ValueError(f"Unknown character '{i}'")
     
     return(str(stack[0]))
 
