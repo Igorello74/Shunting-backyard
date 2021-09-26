@@ -123,6 +123,13 @@ def postfix2infix(inp):
         if i in OPERATORS_PRIORITY:
             assert len(stack)>=2, "Operators can't go before operands"
             
+            node = Node(stack.pop(-2), i, stack.pop())
+            stack.append(node)
+        
+        else:
+            stack.append(i)
+    
+    return(str(stack[0]))
 
 
 if __name__ == '__main__':
