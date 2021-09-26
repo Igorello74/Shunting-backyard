@@ -16,6 +16,17 @@ class Token:
         self.val = val
         self.token_type = token_type
     
+class Node:
+    """Represent two operands and an operation symbol."""
+
+    def __init__(self, operand1, operation, operand2):
+        self.operand1 = operand1
+        self.operation = operation
+        self.operand2 = operand2
+    
+    def __str__(self):
+        return ''.join((self.operand1, self.operation, self.operand2))
+
 
 def infix2postfix(inp, string_output=False):
     inp = inp.replace(' ', '') # delete any spaces
