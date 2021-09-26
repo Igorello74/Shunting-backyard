@@ -112,7 +112,6 @@ def postfix2infix(inp):
     inp -- a list or a string of the Reverse Polish Notation members.
            If a string, each member must be separated with a space.
     """
-    inp = 'fuckurass' #TODO: delete
     try:
         inp = inp.split()
     except AttributeError:
