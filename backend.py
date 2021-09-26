@@ -135,6 +135,36 @@ def postfix2infix(inp):
     return(str(stack[0]))
 
 
+def postfix2prefix(inp, string_output=False):
+    """Convert a postfix (RPN) expression to a prefix (PN or NPN) one.
+
+    Arguments:
+    inp -- a list or a string of the Reverse Polish Notation members.
+           If a string, each member must be separated with a space.
+    """
+
+    raise SystemError("UNDER DEVELOPMENT")
+    try:
+        inp = inp.split()
+    except AttributeError:
+        pass
+    
+    stack = []
+    output=[]
+    for i in inp:
+        if i in OPERATORS_PRIORITY:
+            assert len(stack)>=2, "Operators can't go before operands"
+            
+            output.extend()
+            stack.append(node)
+        
+        elif i.isalnum():
+            stack.append(i)
+        
+        else:
+            raise ValueError(f"Unknown character '{i}'")
+
+
 if __name__ == '__main__':
     a = input()
     print(infix2postfix(a))
