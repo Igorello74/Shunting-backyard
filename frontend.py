@@ -32,7 +32,7 @@ output_options = [
     ttk.Radiobutton(window, text='infix', value='infix',
                    variable=output_format),
     ttk.Radiobutton(window, text='prefix', value='prefix', 
-                   variable=output_format, state='disabled'),
+                   variable=output_format),
     ttk.Radiobutton(window, text='postfix', value='postfix', 
                    variable=output_format),
 ]
@@ -62,6 +62,8 @@ def clicked():
             result = be.infix2postfix(inp)
         elif input_format.get() == 'postfix' and output_format.get() == 'infix':
             result = be.postfix2infix(inp)
+        elif input_format.get() == 'postfix' and output_format.get() == 'prefix':
+            result = be.postfix2prefix(inp)
         else:
             result = f"WARNING: Can't convert from {input_format.get()} to {output_format.get()}"
     
