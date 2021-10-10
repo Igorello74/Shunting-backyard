@@ -58,6 +58,7 @@ def clicked():
     inp = input_entry.get()
 
     try:
+        assert len(inp) > 0, "expression can't be empty"
         if input_format.get() == 'infix' and output_format.get() == 'postfix':
             result = be.infix2postfix(inp)
         elif input_format.get() == 'postfix' and output_format.get() == 'infix':
